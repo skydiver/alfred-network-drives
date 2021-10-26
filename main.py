@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 
 import os
 import subprocess
@@ -26,6 +26,12 @@ for line in lines:
 if len(mounts) == 0:
     mounts.append({
         "title": "No mounted network drives found",
+    })
+else:
+    mounts.append({
+        "arg": "all",
+        "title": "* Unmount all *",
+        "subtitle": "Unmount all your network drives",
     })
 
 
