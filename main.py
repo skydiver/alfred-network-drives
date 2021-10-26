@@ -1,31 +1,28 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 
-import os
-import subprocess
-import re
 import json
+from drives import get_network_drives
 
-types = ['smbfs', 'afpfs']
 mounts = []
+drives = get_network_drives()
 
-mount = subprocess.getstatusoutput('mount -v')
-lines = mount[1].split('\n')
-for line in lines:
-    matching = any(word in line for word in types)
-    if matching:
-        path = re.search(r'on\s(.*?)\s\(', line).group(1)
-        user = re.search(r'by\s(.*?)\)', line).group(1)
-        name = os.path.basename(path)
-        mounts.append({
-            "arg": path,
-            "title": name,
-            "subtitle": "Mounted by {} at {}".format(user, path)
-        })
+for drive in drives:
+    mounts.append({
+        "arg": drive['path'],
+        "title": drive['name'],
+        "subtitle": "Mounted by {} at {}".format(drive['user'], drive['path'])
+    })
 
 
 if len(mounts) == 0:
     mounts.append({
         "title": "No mounted network drives found",
+    })
+else:
+    mounts.append({
+        "arg": "all",
+        "title": "* Unmount all *",
+        "subtitle": "Unmount all your network drives",
     })
 
 
