@@ -8,8 +8,20 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
-		<key>1B0F92E1-491F-4E4E-ABBB-B23C3DF163A0</key>
+		<key>391F3D6B-B55F-41B7-A12D-C83D308CCE24</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8E3F699-CF39-47F5-875E-0569982202E3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>C8AEB1C5-CC5B-4ACC-B02E-149DC2DE126D</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>896A039C-303C-4DAD-AE6E-5522A9B3AB97</string>
@@ -34,6 +46,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>B8E3F699-CF39-47F5-875E-0569982202E3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>17398F0C-49FD-4B2F-A6EB-56B6F6D58562</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C6035BA3-453F-44B2-A720-A46FCB9E885E</key>
 		<array>
 			<dict>
@@ -48,21 +73,21 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>1B0F92E1-491F-4E4E-ABBB-B23C3DF163A0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>849CB80C-1F99-421C-BC74-29050BD5D850</string>
 				<key>modifiers</key>
 				<integer>262144</integer>
 				<key>modifiersubtext</key>
 				<string>Unmount network drive</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>391F3D6B-B55F-41B7-A12D-C83D308CCE24</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -111,6 +136,8 @@
 				<false/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>transient</key>
 				<false/>
 			</dict>
@@ -143,17 +170,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query=$1
+
+umount "$query"
+
+echo $query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
 				<string></string>
-				<key>sourcefile</key>
-				<string>{query}</string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>896A039C-303C-4DAD-AE6E-5522A9B3AB97</string>
+			<string>EE8E7FDC-CB97-48AF-917E-E52076996696</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -207,25 +246,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputstring</key>
-				<string></string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
-			<key>uid</key>
-			<string>1B0F92E1-491F-4E4E-ABBB-B23C3DF163A0</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -247,33 +267,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>query=$1
-
-umount "$query"
-
-echo $query</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>EE8E7FDC-CB97-48AF-917E-E52076996696</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>inputstring</key>
 				<string></string>
 				<key>matchcasesensitive</key>
@@ -290,31 +283,132 @@ echo $query</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query=$1
+
+umount "$query"
+
+echo $query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>unmount.py</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B8E3F699-CF39-47F5-875E-0569982202E3</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Unmounted all network drives</string>
+				<key>title</key>
+				<string>Alfred Network Drives</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>17398F0C-49FD-4B2F-A6EB-56B6F6D58562</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>all</string>
+						<key>outputlabel</key>
+						<string>unmount all</string>
+						<key>uid</key>
+						<string>C8AEB1C5-CC5B-4ACC-B02E-149DC2DE126D</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>open drive</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>391F3D6B-B55F-41B7-A12D-C83D308CCE24</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>896A039C-303C-4DAD-AE6E-5522A9B3AB97</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>List your mounted network drives
+https://github.com/skydiver/alfred-network-drives</string>
 	<key>uidata</key>
 	<dict>
-		<key>1B0F92E1-491F-4E4E-ABBB-B23C3DF163A0</key>
-		<dict>
-			<key>xpos</key>
-			<integer>445</integer>
-			<key>ypos</key>
-			<integer>270</integer>
-		</dict>
-		<key>213D0B2F-5050-46AD-A1AA-56D88FEF6A15</key>
+		<key>17398F0C-49FD-4B2F-A6EB-56B6F6D58562</key>
 		<dict>
 			<key>xpos</key>
 			<integer>845</integer>
 			<key>ypos</key>
 			<integer>440</integer>
 		</dict>
+		<key>213D0B2F-5050-46AD-A1AA-56D88FEF6A15</key>
+		<dict>
+			<key>xpos</key>
+			<integer>845</integer>
+			<key>ypos</key>
+			<integer>240</integer>
+		</dict>
+		<key>391F3D6B-B55F-41B7-A12D-C83D308CCE24</key>
+		<dict>
+			<key>xpos</key>
+			<integer>425</integer>
+			<key>ypos</key>
+			<integer>610</integer>
+		</dict>
 		<key>849CB80C-1F99-421C-BC74-29050BD5D850</key>
 		<dict>
 			<key>xpos</key>
 			<integer>445</integer>
 			<key>ypos</key>
-			<integer>470</integer>
+			<integer>270</integer>
 		</dict>
 		<key>881996D6-5889-4155-913B-4E76A7192AAF</key>
 		<dict>
@@ -328,7 +422,14 @@ echo $query</string>
 			<key>xpos</key>
 			<integer>605</integer>
 			<key>ypos</key>
-			<integer>240</integer>
+			<integer>740</integer>
+		</dict>
+		<key>B8E3F699-CF39-47F5-875E-0569982202E3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>605</integer>
+			<key>ypos</key>
+			<integer>440</integer>
 		</dict>
 		<key>C6035BA3-453F-44B2-A720-A46FCB9E885E</key>
 		<dict>
@@ -349,13 +450,11 @@ echo $query</string>
 			<key>xpos</key>
 			<integer>605</integer>
 			<key>ypos</key>
-			<integer>440</integer>
+			<integer>240</integer>
 		</dict>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.1.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/skydiver/</string>
 </dict>
